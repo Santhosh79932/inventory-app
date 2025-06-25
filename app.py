@@ -1,27 +1,20 @@
-from flask import Flask, render_template, request
-import psycopg2
-import os
+from flask import Flask, render_template, request, redirect
+import sqlite3
 
 app = Flask(__name__)
 
-# Get a database connection
-def get_connection():
-    return psycopg2.connect(os.getenv("DATABASE_URL"))
-
-# Fetch item by ID
 def get_item(item_id):
-    conn = get_connection()
+    conn = sqlite3.connect('inventory.db')
     cursor = conn.cursor()
-    cursor.execute("SELECT id, name, quantity FROM items WHERE id = %s", (item_id,))
+    cursor.execute("SELECT id, name, quantity FROM items WHERE id = ?", (item_id,))
     item = cursor.fetchone()
     conn.close()
     return item
 
-# Update item quantity
 def update_quantity(item_id, new_qty):
-    conn = get_connection()
+    conn = sqlite3.connect('inventory.db')
     cursor = conn.cursor()
-    cursor.execute("UPDATE items SET quantity = %s WHERE id = %s", (new_qty, item_id))
+    cursor.execute("UPDATE items SET quantity = ? WHERE id = ?", (new_qty, item_id))
     conn.commit()
     conn.close()
 
@@ -51,6 +44,7 @@ def index():
 
     return render_template("index.html", item=item, message=message)
 
-# No need for app.run when using gunicorn
-# if __name__ == "__main__":
-#     app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
+
+
