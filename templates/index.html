@@ -1,184 +1,194 @@
+<!-- Key updated areas marked with 🔧 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Pavan Handlooms</title>
+  <meta charset="UTF-8">
+  <title>Pavan Handlooms</title>
 
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom right, #fff1f0, #ffece1, #fffaf5);
-            background-attachment: fixed;
-            font-family: 'Segoe UI', sans-serif;
-        }
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- 🔧 Added for mobile scaling -->
 
-        .container {
-            max-width: 720px;
-            margin: 60px auto;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-            padding: 40px 30px;
-        }
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #fff1f0, #ffece1, #fffaf5);
+      background-attachment: fixed;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-        .banner {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 18px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            margin-bottom: 25px;
-        }
+    .container {
+      max-width: 720px;
+      margin: 60px auto;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+      padding: 40px 30px;
+    }
 
-        .status-available {
-            color: green;
-            font-weight: bold;
-        }
+    .banner {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 25px;
+    }
 
-        .status-soldout {
-            color: red;
-            font-weight: bold;
-        }
+    .status-available {
+      color: green;
+      font-weight: bold;
+    }
 
-        .action-box {
-            border: 1px solid #e8d9cc;
-            padding: 20px;
-            border-radius: 16px;
-            background: #fffaf5;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-        }
+    .status-soldout {
+      color: red;
+      font-weight: bold;
+    }
 
-        .form-control:focus {
-            box-shadow: none;
-            border-color: #d68baf;
-        }
+    .action-box {
+      border: 1px solid #e8d9cc;
+      padding: 20px;
+      border-radius: 16px;
+      background: #fffaf5;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
 
-        .btn-custom {
-            background-color: #d86b94;
-            color: white;
-        }
+    .form-control:focus {
+      box-shadow: none;
+      border-color: #d68baf;
+    }
 
-        .btn-custom:hover {
-            background-color: #c75386;
-        }
+    .btn-custom {
+      background-color: #d86b94;
+      color: white;
+    }
 
-        .btn-success {
-            background-color: #69bb7b;
-        }
+    .btn-custom:hover {
+      background-color: #c75386;
+    }
 
-        .btn-success:hover {
-            background-color: #53a466;
-        }
+    .btn-success {
+      background-color: #69bb7b;
+    }
 
-        .btn-danger:hover {
-            background-color: #c0392b;
-        }
+    .btn-success:hover {
+      background-color: #53a466;
+    }
 
-        .nav-btn {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-        }
+    .btn-danger:hover {
+      background-color: #c0392b;
+    }
 
-        @media (min-width: 576px) {
-            .action-row {
-                display: flex;
-                gap: 20px;
-            }
+    .nav-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
 
-            .action-box {
-                flex: 1;
-            }
-        }
-    </style>
+    /* 🔧 Responsive tweaks */
+    @media (max-width: 575.98px) {
+      .search-form {
+        flex-direction: column;
+      }
+
+      .search-form .form-control,
+      .search-form .btn {
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 576px) {
+      .action-row {
+        display: flex;
+        gap: 20px;
+      }
+
+      .action-box {
+        flex: 1;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Dashboard Button -->
-    <a href="/" class="btn btn-outline-secondary nav-btn">
-        <i class="bi bi-house-door-fill"></i> Home
-    </a>
+  <!-- Home Button -->
+  <a href="/" class="btn btn-outline-secondary nav-btn">
+    <i class="bi bi-house-door-fill"></i> Home
+  </a>
 
-    <!-- Main Container -->
-    <div class="container">
+  <div class="container">
+    <!-- Banner -->
+    <img src="https://i.imgur.com/6V3r3pV.jpg" alt="Saree Banner" class="banner">
 
-        <!-- Saree Banner Image -->
-        <img src="https://i.imgur.com/6V3r3pV.jpg" alt="Saree Banner" class="banner">
+    <!-- Title -->
+    <h2 class="text-center mb-4">
+      <i class="bi bi-box-seam-fill text-danger"></i> Pavan Handlooms
+    </h2>
 
-        <!-- Title -->
-        <h2 class="text-center mb-4">
-            <i class="bi bi-box-seam-fill text-danger"></i> Pavan Handlooms
-        </h2>
+    <!-- Search Form -->
+    <form method="POST" class="d-flex gap-2 mb-4 search-form flex-wrap"> <!-- 🔧 class added -->
+      <input type="text" name="item_id" class="form-control" placeholder="Enter Item ID" required>
+      <button type="submit" name="action" value="search" class="btn btn-custom">
+        <i class="bi bi-search"></i> Search
+      </button>
+    </form>
 
-        <!-- Search Form -->
-        <form method="POST" class="d-flex gap-2 mb-4">
-            <input type="text" name="item_id" class="form-control" placeholder="Enter Item ID" required>
-            <button type="submit" name="action" value="search" class="btn btn-custom">
-                <i class="bi bi-search"></i> Search
-            </button>
-        </form>
-
-        <!-- If item found -->
-        {% if item %}
-        <div class="mb-4">
-            <h4 class="text-center">Item Details</h4>
-            <ul class="list-group">
-                <li class="list-group-item"><strong>ID:</strong> {{ item[0] }}</li>
-                <li class="list-group-item"><strong>Name:</strong> {{ item[1] }}</li>
-                <li class="list-group-item"><strong>Quantity:</strong> {{ item[2] }}</li>
-                <li class="list-group-item">
-                    <strong>Status:</strong>
-                    <span class="{{ 'status-available' if item[2] > 0 else 'status-soldout' }}">
-                        {{ "Available" if item[2] > 0 else "Sold Out" }}
-                    </span>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Action Section -->
-        <div class="action-row">
-            <!-- Sold Out -->
-            <div class="action-box">
-                <h5><i class="bi bi-x-circle-fill text-danger"></i> Mark as Sold Out</h5>
-                <form method="POST">
-                    <input type="hidden" name="item_id" value="{{ item[0] }}">
-                    <button type="submit" name="action" value="sell" class="btn btn-danger w-100">
-                        <i class="bi bi-x-lg"></i> Sold Out
-                    </button>
-                </form>
-            </div>
-
-            <!-- Add Quantity -->
-            <div class="action-box">
-                <h5><i class="bi bi-plus-circle-fill text-success"></i> Add Quantity</h5>
-                <form method="POST">
-                    <input type="hidden" name="item_id" value="{{ item[0] }}">
-                    <input type="number" name="add_qty" min="1" class="form-control mb-2" placeholder="Enter Quantity" required>
-                    <button type="submit" name="action" value="add" class="btn btn-success w-100">
-                        <i class="bi bi-plus-lg"></i> Add Quantity
-                    </button>
-                </form>
-            </div>
-        </div>
-        {% endif %}
-
-        <!-- Message Section -->
-        {% if message %}
-        <div class="alert alert-success text-center mt-4" role="alert">
-            <i class="bi bi-check-circle-fill"></i> {{ message }}
-        </div>
-        {% endif %}
+    {% if item %}
+    <div class="mb-4">
+      <h4 class="text-center">Item Details</h4>
+      <ul class="list-group">
+        <li class="list-group-item"><strong>ID:</strong> {{ item[0] }}</li>
+        <li class="list-group-item"><strong>Name:</strong> {{ item[1] }}</li>
+        <li class="list-group-item"><strong>Quantity:</strong> {{ item[2] }}</li>
+        <li class="list-group-item">
+          <strong>Status:</strong>
+          <span class="{{ 'status-available' if item[2] > 0 else 'status-soldout' }}">
+            {{ "Available" if item[2] > 0 else "Sold Out" }}
+          </span>
+        </li>
+      </ul>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="action-row">
+      <!-- Sold Out -->
+      <div class="action-box">
+        <h5><i class="bi bi-x-circle-fill text-danger"></i> Mark as Sold Out</h5>
+        <form method="POST">
+          <input type="hidden" name="item_id" value="{{ item[0] }}">
+          <button type="submit" name="action" value="sell" class="btn btn-danger w-100">
+            <i class="bi bi-x-lg"></i> Sold Out
+          </button>
+        </form>
+      </div>
+
+      <!-- Add Quantity -->
+      <div class="action-box">
+        <h5><i class="bi bi-plus-circle-fill text-success"></i> Add Quantity</h5>
+        <form method="POST">
+          <input type="hidden" name="item_id" value="{{ item[0] }}">
+          <input type="number" name="add_qty" min="1" class="form-control mb-2" placeholder="Enter Quantity" required>
+          <button type="submit" name="action" value="add" class="btn btn-success w-100">
+            <i class="bi bi-plus-lg"></i> Add Quantity
+          </button>
+        </form>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if message %}
+    <div class="alert alert-success text-center mt-4" role="alert">
+      <i class="bi bi-check-circle-fill"></i> {{ message }}
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
